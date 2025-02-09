@@ -42,7 +42,7 @@ const Login = () => {
       <div className="login-conten">
         <div className="card" >
           <div className="card-body">
-            <h5 className="card-title">Card title</h5>
+            <h5 className="card-title">Login</h5>
             {error && <div class="alert alert-danger" role="alert">
               {error}
             </div>}
@@ -61,9 +61,7 @@ const Login = () => {
                   <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </div>
               </div>
-              <button type="submit" >Ingresar</button>
-
-              {/* <button onClick={handleLogin}>Ingresar</button> */}
+              <button  className="btn btn-success"  type="submit" >Ingresar</button>
 
             </form>
           </div>

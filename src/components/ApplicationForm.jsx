@@ -108,7 +108,7 @@ const ApplicationForm = ({ applicationToEdit, refreshApplication, clearEdit }) =
                         }
                         <div className="mb-3">
                             <button class="btn btn-primary" type="submit">{applicationToEdit ? "Actualizar" : "Agregar"}</button>
-                            {applicationToEdit && <button onClick={clearEdit}>Cancelar</button>}
+                            {applicationToEdit && <button  className="btn btn-danger" onClick={clearEdit}>Cancelar</button>}
                         </div>
 
                     </form>

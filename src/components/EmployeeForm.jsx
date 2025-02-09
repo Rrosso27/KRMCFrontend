@@ -61,7 +61,7 @@ const EmployeeForm = ({ employeeToEdit, refreshEmployees, clearEdit }) => {
                         </div>
                         <div className="mb-3">
                             <button  className="btn btn-primary" type="submit">{employeeToEdit ? "Actualizar" : "Agregar"}</button>
-                            {employeeToEdit && <button onClick={clearEdit}>Cancelar</button>}
+                            {employeeToEdit && <button className="btn btn-danger" onClick={clearEdit}>Cancelar</button>}
                         </div>
 
                     </form>
