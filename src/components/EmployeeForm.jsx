@@ -41,13 +41,34 @@ const EmployeeForm = ({ employeeToEdit, refreshEmployees, clearEdit }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
-            <input type="number" placeholder="Salario" value={salario} onChange={(e) => setSalario(e.target.value)} required />
-            <input type="date" value={fechaIngreso} onChange={(e) => setFechaIngreso(e.target.value)} required />
-            <button type="submit">{employeeToEdit ? "Actualizar" : "Agregar"}</button>
-            {employeeToEdit && <button onClick={clearEdit}>Cancelar</button>}
-        </form>
+        <>
+            <div className="card">
+                <div className="card-body">
+                    <form onSubmit={handleSubmit}>
+                        <div className="mb-2">
+                            <label for="nombre" className="form-label">Nombre</label>
+                            <input type="text" className="form-control" id="nombre" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+                        </div>
+                        <div className="mb-2">
+                            <label for="salario" class="form-label">Salario</label>
+                            <input type="number" className="form-control" id="salario" placeholder="Salario" value={salario} onChange={(e) => setSalario(e.target.value)} required />
+                        </div>
+                        <div className="mb-2">
+                            <label for="date" class="form-label">Fecha De Ingreso</label>
+
+                            <input type="date" id="date" className="form-control" value={fechaIngreso} onChange={(e) => setFechaIngreso(e.target.value)} required />
+
+                        </div>
+                        <div className="mb-3">
+                            <button  className="btn btn-primary" type="submit">{employeeToEdit ? "Actualizar" : "Agregar"}</button>
+                            {employeeToEdit && <button onClick={clearEdit}>Cancelar</button>}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </>
+
     );
 };
 

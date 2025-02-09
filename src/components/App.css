@@ -1,0 +1,6 @@
+.list {
+    width: 100% !important;
+    height: 500px !important;
+    overflow: auto !important; /* Agrega scroll solo si es necesario */
+    border: 1px solid #ccc !important;
+}

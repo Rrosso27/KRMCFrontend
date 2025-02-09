@@ -8,21 +8,25 @@ const Employee = () => {
     const [refresh, setRefresh] = useState(false);
     const rol = localStorage.getItem('rol')
     return (
-        <div className="container">
+        <div >
             <h2>Gestión de Empleados</h2>
-            {
-                rol == "admin" && <EmployeeForm
-                    employeeToEdit={employeeToEdit}
-                    refreshEmployees={() => setRefresh(!refresh)}
-                    clearEdit={() => setEmployeeToEdit(null)}
-                />
-            }
 
-            <EmployeeTable
-                rol={rol}
-                setEmployeeToEdit={setEmployeeToEdit}
-                refresh={refresh}
-            />
+            <div className="container">
+                {
+                    rol == "admin" && <EmployeeForm
+                        employeeToEdit={employeeToEdit}
+                        refreshEmployees={() => setRefresh(!refresh)}
+                        clearEdit={() => setEmployeeToEdit(null)}
+                    />
+                }
+
+                <EmployeeTable
+                    rol={rol}
+                    setEmployeeToEdit={setEmployeeToEdit}
+                    refresh={refresh}
+                />
+            </div>
+
         </div>
     )
 }

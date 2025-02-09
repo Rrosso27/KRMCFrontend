@@ -9,22 +9,29 @@ const Application = () => {
     const [stateUpdate, setStateUpdate] = useState(false)
     const rol = localStorage.getItem('rol')
     return (
-        <div className="container">
-            <h2>Gestión de Empleados</h2>
-            {rol == "admin" && <ApplicationForm
-                applicationToEdit={applicationToEdit}
-                refreshApplication={() => setRefresh(!refresh)}
-                clearEdit={() => setApplicationToEdit(null)}
-            />}
+        <div>
+                <h2>Gestión de Solicitudes</h2>
 
-            <ApplicationTable
-                rol = {rol}
-                stateUpdate={stateUpdate}
-                setStateUpdate={setStateUpdate}
-                setApplicationToEdit={setApplicationToEdit}
-                refresh={refresh}
-            />
+            <div className="container">
+                {rol == "admin" && <ApplicationForm
+                    applicationToEdit={applicationToEdit}
+                    refreshApplication={() => setRefresh(!refresh)}
+                    clearEdit={() => setApplicationToEdit(null)}
+                />}
+
+                <div className='mb-4'>
+                    <ApplicationTable
+                        rol={rol}
+                        stateUpdate={stateUpdate}
+                        setStateUpdate={setStateUpdate}
+                        setApplicationToEdit={setApplicationToEdit}
+                        refresh={refresh}
+                    />
+                </div>
+
+            </div>
         </div>
+
     )
 }
 
