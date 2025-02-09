@@ -12,13 +12,12 @@ const Employee = () => {
             <h2>Gestión de Empleados</h2>
 
             <div className="container">
-                {
-                    rol == "admin" && <EmployeeForm
-                        employeeToEdit={employeeToEdit}
-                        refreshEmployees={() => setRefresh(!refresh)}
-                        clearEdit={() => setEmployeeToEdit(null)}
-                    />
-                }
+                <EmployeeForm
+                    employeeToEdit={employeeToEdit}
+                    refreshEmployees={() => setRefresh(!refresh)}
+                    clearEdit={() => setEmployeeToEdit(null)}
+                />
+
 
                 <EmployeeTable
                     rol={rol}

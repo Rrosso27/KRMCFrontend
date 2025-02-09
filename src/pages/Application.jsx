@@ -10,14 +10,14 @@ const Application = () => {
     const rol = localStorage.getItem('rol')
     return (
         <div>
-                <h2>Gestión de Solicitudes</h2>
+            <h2>Gestión de Solicitudes</h2>
 
             <div className="container">
-                {rol == "admin" && <ApplicationForm
+                <ApplicationForm
                     applicationToEdit={applicationToEdit}
                     refreshApplication={() => setRefresh(!refresh)}
                     clearEdit={() => setApplicationToEdit(null)}
-                />}
+                />
 
                 <div className='mb-4'>
                     <ApplicationTable
