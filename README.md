@@ -1,8 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  # Iniciar Proyecto 🚀
+  Para ejecutar el proyecto en tu entorno local de Docker, puedes hacerlo mediante este comando para Construir la imagen
+ 
+  ~~~bash  
+  docker build -t mi-react-app .
+  ~~~
+  Después de construir la imagen, ejecuta este comando que te permitirá ejecutar el proyecto en tu entorno local
+  ~~~bash  
+  docker run -p 3000:80 mi-react-app
+  ~~~
+  📝Nota: Al ejecutar el proyecto, se utilizarán los puertos 3000:80. Asegúrate de tener el puerto libre
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  Eso es todo. Lo único que debes hacer es ingresar a esta URL
+ ~~~bash  
+    http://localhost:3000
+  ~~~
+ 

@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  web:
+    image: react-vite-prod
+    container_name: react-vite-app
+    build: .
+    ports:
+      - "8080:80"
+    restart: always
