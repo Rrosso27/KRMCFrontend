@@ -3,8 +3,7 @@ import axios from "axios";
 const API_URL = "http://localhost:5000/api/";
 
 const getAuthHeaders = () => {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sIjoiYWRtaW4iLCJpYXQiOjE3MzkxNDU4NjAsImV4cCI6MTczOTE0OTQ2MH0.MV-4ik9L0j9f8FEDkQdzBxubb15E2kI2dZNMngoDJYI"
-    //  localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     return { token: `${token}` };
 };
 
