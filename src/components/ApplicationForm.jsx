@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+
+import React, { useState, useEffect } from "react";
+
 import { createApplication, updateAapplication, getEmployees } from "../app/api";
 const ApplicationForm = ({ applicationToEdit, refreshApplication, clearEdit }) => {
     const [codigo, setCodigo] = useState("");
@@ -81,34 +83,35 @@ const ApplicationForm = ({ applicationToEdit, refreshApplication, clearEdit }) =
 
                         <div className="mb-2">
                             <label for="codigo" className="form-label">Codigo</label>
-                            <input type="text" id="codigo" className="form-control" placeholder="codigo" value={codigo} onChange={(e) => setCodigo(e.target.value)} required />
+                            <input type="text" id="codigo" className="form-control" placeholder="Código" value={codigo} onChange={(e) => setCodigo(e.target.value)} required />
                         </div>
                         <div className="mb-2">
                             <label for="descripcion" className="form-label">Descripcion</label>
-                            <input type="text" id="descripcion" className="form-control" placeholder="descripcion" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required />
+                            <input type="text" id="Descripcion" className="form-control" placeholder="Descripción" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} required />
                         </div>
                         <div className="mb-2">
                             <label for="resumen" className="form-label">Resumen</label>
-                            <input type="text" id="resumen" className="form-control" placeholder="resumen" value={resumen} onChange={(e) => setResumen(e.target.value)} required />
-
+                            <input type="text" id="Resumen" className="form-control" placeholder="Resumen" value={resumen} onChange={(e) => setResumen(e.target.value)} required />
                         </div>
 
                         {applicationToEdit == null &&
                             <div className="mb-2">
                                 <label for="empleado" className="form-label">Empleado</label>
                                 <select id="empleado" className="form-control" value={idEmployee} onChange={(e) => setidEmployee(e.target.value)} required>
-                                    <option value="" defaultValue>Open this select menu</option>
+                                <option value="" disabled selected hidden>ID Empleado</option>
+
                                     {empleados.length > 0 ?
                                         empleados.map((empleado) => (
                                             <option key={empleado.id} value={empleado.id}>{empleado.nombre}</option>
-                                        )) : <option value="">No hay datos</option>}
+                                        )) :   <option value="">No hay datos</option>
+}
                                 </select>
                             </div>
 
                         }
                         <div className="mb-3">
-                            <button class="btn btn-primary" type="submit">{applicationToEdit ? "Actualizar" : "Agregar"}</button>
-                            {applicationToEdit && <button  className="btn btn-danger" onClick={clearEdit}>Cancelar</button>}
+                            <button className="btn btn-primary" type="submit">{applicationToEdit ? "Actualizar" : "Agregar"}</button>
+                            {applicationToEdit && <button className="btn btn-danger" onClick={clearEdit}>Cancelar</button>}
                         </div>
 
                     </form>
